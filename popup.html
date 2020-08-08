@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Bootstrap CDN -->
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- non-bootstrap stylesheet -->
+ 
+    <!-- stylesheet -->
     <link rel="stylesheet" href="./popup.css">
+
+    <script defer src="html2canvas.min.js"></script>
+    <script defer src="disintegrate.js"></script>
 </head>
 <body>
-    <button type="button" class="btn btn-lg btn-primary">Snap</button>
+    <button type="button" id="snap-btn">Snap</button>
+    <img src="128_gauntlet.png" data-dis-type="simultaneous"></img>
     <script src="popup.js" charset="utf-8"></script>
+
 </body>
 </html>

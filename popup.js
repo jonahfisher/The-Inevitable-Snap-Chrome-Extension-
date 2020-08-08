@@ -1,17 +1,27 @@
+//const disintigrate = require("./disintigrate")
+// disintigrate.init()
+
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('button').addEventListener('click', onclick, false)
+    document.querySelector('#snap-btn').addEventListener('click', onclick, false)
     function onclick () {
-        // Call to chrome api
+        // Call to chrome api to get current tab
         chrome.tabs.query({currentWindow: true, active: true},
         function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, 'hi')
+            chrome.tabs.sendMessage(tabs[0].id, 'message', snapImages)
+            
         })
 
     }
 
-    function setCount (res) {
-        const div = document.createElement('div')
-        div.textContent = '${res.count}'
-        document.body.appendChild(div)
+    function snapImages (images) {
+        if (images != undefined){
+            for (var i = 0; i < images.length; i++) {
+                //images[i].data-dis-type = "simultaneous"
+                // const disImg = disintigrate.getDisObj(images[i])
+                // disintigrate.createSimultaneousParticles(disImg)
+                images[i].remove()
+            }
+        }
+       
     }
 }, false)
