@@ -1,0 +1,19 @@
+{
+    "name": "The Inevitable Snap",
+    "version": "0.1",
+    "manifest_version": 2,
+    "icons": {
+        "128": "128_gauntlet.png",
+        "48": "48_gauntlet.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "The Inevitable Snap"
+    }
+}
