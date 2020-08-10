@@ -1,6 +1,4 @@
 
-disintegrate.init()
-
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#snap-btn').addEventListener('click', onclick, false)
     function onclick () {
@@ -13,3 +11,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 }, false)
+
+

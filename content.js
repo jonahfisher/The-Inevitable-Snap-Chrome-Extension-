@@ -1,27 +1,16 @@
 
-disintegrate.init()
-
 
 chrome.runtime.onMessage.addListener(function () {
-    // Loop through all images on the page and make array of their srcs
-    var imgs = document.getElementsByTagName("img");
-    //imgs[i].data-dis-type = "simultaneous"
-    // var imgSrcs = [];
-    // for (var i = 0; i < imgs.length; i++) {
-    //     imgSrcs.push(imgs[i].src);
-    // }
-    // function snapImages (images) {
-        // if (imgs = undefined){
-    for (var i = 0; i < imgs.length; i++) {
-        imgs[i].setAttribute("data-dis-type", "simultaneous")
-        const disImg = disintegrate.getDisObj(imgs[i])
-        disintegrate.createSimultaneousParticles(disImg)
-    //             //imgs[i].remove()
-    //         }
-    }
-       
-    // }
-
-    //sendResponse({images: imgs})
+    //disintegrate.init()
     
+    const imgs = document.querySelectorAll("img");
+    
+    // Randomly delete half of all images in view on the page
+    for (let i = 0; i < imgs.length / 2; i++) {
+        const indexToDelete = Math.floor(Math.random() * imgs.length)
+        // imgs[i].setAttribute("data-dis-type", "simultaneous")
+        // const disImg = disintegrate.getDisObj(imgs[i])
+        // disintegrate.createSimultaneousParticles(disImg)
+        imgs[indexToDelete].remove()
+    }
 })
