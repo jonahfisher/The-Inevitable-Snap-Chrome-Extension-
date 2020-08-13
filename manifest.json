@@ -6,10 +6,15 @@
         "128": "icons/128_gauntlet.png",
         "48": "icons/48_gauntlet.png"
     },
+    "web_accessible_resources": [
+        "html2canvas.min.js",
+        "disintegrate.js",
+        "anime.min.js"
+    ],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["content.js"]
+            "js": ["html2canvas.min.js", "disintegrate.js", "content.js"]
         }
     ],
     "browser_action": {
